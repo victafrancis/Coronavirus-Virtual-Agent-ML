@@ -1,12 +1,12 @@
-.col-8{
+.col{
     text-align: center; 
     border: 1px solid #083b66;
     padding: 0em;
 }
-.col{
+.col-sm-4{
     text-align: center; 
     border: 1px solid #083b66; 
-    margin-right: 12px;
+    margin-right: 0px;
     padding: 2em;
     font-family: 'Fredoka One', cursive;
     color: #55c6c9;
