@@ -1,17 +1,11 @@
 from flask import Flask, render_template, url_for, request
-# from flask_wtf import FlaskForm
-# from wtforms import StringField
-# from wtforms.validators import DataRequired
 import pickle
-import keras
 import responses, functions
 import numpy as np
-import pandas as pd
+import keras
 
-from sklearn.feature_extraction.text import CountVectorizer
-
-import keras.backend.tensorflow_backend as tb
-tb._SYMBOLIC_SCOPE.value = True
+# import keras.backend.tensorflow_backend as tb
+# tb._SYMBOLIC_SCOPE.value = True
 
 app = Flask(__name__)
 
@@ -19,8 +13,6 @@ app = Flask(__name__)
 virtual_agent_model = pickle.load(open('covid19_virtual_agent.pickle','rb'))
 #loading the vectorizer from pickle
 vectorizer = pickle.load(open('cv_vector.pickle','rb'))
-
-print("keras: " + keras.__version__)
 
 @app.route('/', methods=['POST', 'GET'])
 def home():
