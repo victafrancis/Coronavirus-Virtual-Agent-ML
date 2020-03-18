@@ -44,7 +44,9 @@
         <p><b>Question: </b>{{ content['question'] }}</p>
         <p><b>Title: </b>{{ content['response_title'] }}</p>
         <p><b>Model Confidence: </b>{{ content['confidence'] }}</p>
-        <p>{{ content['response_content'] }}</p>
+        {% for item in content['response_content']%}   
+          <p> {{ item|safe }} </p> 
+        {% endfor %}
       </div>
       {% endif %}
 

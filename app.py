@@ -41,6 +41,7 @@ def home():
         content['confidence'] = str(np.amax(prediction[0]))
         print(responses.class_names[np.argmax(prediction[0])])
         content['response_title'] = responses.class_names[np.argmax(prediction[0])]
+        content['response_content'] = responses.class_responses[np.argmax(prediction[0])]
 
     return render_template('index.html', content=content)
 
