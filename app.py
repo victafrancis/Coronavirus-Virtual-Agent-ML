@@ -26,6 +26,7 @@ print("keras: " + keras.__version__)
 def home():
 
     content = {'question':'','confidence':'','response_title':'','response_content':''}
+    content['infected_count'] = functions.getInfectedCount()
     
     if request.method == 'POST':
         question = request.form['question']  #get question from form
