@@ -1,11 +1,15 @@
+
+hr{
+    color: black;
+}
 .col{
     text-align: center; 
-    border: 1px solid #083b66;
     padding: 0em;
 }
 .col-sm-4{
     text-align: center; 
-    border: 1px solid #083b66; 
+    border: 10px solid #083b66; 
+    border-radius: 5em;
     margin-right: 0px;
     padding: 2em;
     font-family: 'Fredoka One', cursive;
@@ -80,6 +84,7 @@ footer{
     border-radius: 200px;
     box-shadow: 0 10px 40px #CCD7DD, 0 0 0 20px #55c6c9;
     transform: scale(0.5);
+    max-width: 100%;
 }
 
 form
