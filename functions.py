@@ -38,3 +38,23 @@ def getInfectedCount():
     count = soup.find("div", {"class": "maincounter-number"}).find("span", text=True)
 
     return count.string
+
+def getCuredCount():
+    url = 'https://www.worldometers.info/coronavirus/'
+    
+    html_page = urlopen(url).read()
+    soup = BeautifulSoup(html_page, 'html.parser')
+
+    count = soup.find_all("div", {"class": "maincounter-number"})[2].find("span", text=True)
+
+    return count.string
+
+def getDeathCount():
+    url = 'https://www.worldometers.info/coronavirus/'
+    
+    html_page = urlopen(url).read()
+    soup = BeautifulSoup(html_page, 'html.parser')
+
+    count = soup.find_all("div", {"class": "maincounter-number"})[1].find("span", text=True)
+
+    return count.string

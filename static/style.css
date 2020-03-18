@@ -1,12 +1,21 @@
+.col-8{
+    text-align: center; 
+    border: 1px solid #083b66;
+    padding: 0em;
+}
+.col{
+    text-align: center; 
+    border: 1px solid #083b66; 
+    margin-right: 12px;
+    padding: 2em;
+    font-family: 'Fredoka One', cursive;
+    color: #55c6c9;
 
-html, body
-{
-    min-height: 100%;
 }
 
 body
 {
-    margin: 0;
+    padding: 2em;
     background-color: #F4F4F4;
 }
 
@@ -33,7 +42,7 @@ input, button
 }
 
 footer{
-    color: #006EA9;
+    color: #083b66;
     font-family: 'Fredoka One', cursive;
     text-align: center;
     margin-top: 5em;
@@ -43,7 +52,7 @@ footer{
 
 .banner{
     font-family: 'Fredoka One', cursive;
-    color: #006EA9;
+    color: #55c6c9;
     text-align: center;
     font-size: 6em;
     margin: 0em;
@@ -57,19 +66,19 @@ footer{
     /* margin-right: 360px;
     margin-left: 390px; */
     display: block;
-    max-width: 50%;
+    max-width: 80%;
     margin-left: auto;
     margin-right: auto;
-    font-size: medium;
+    font-size: large;
 }
 
 #cover
 {
     display: block;
     padding: 30px;
-    background-color: #006EA9;
+    background-color: #083b66;
     border-radius: 200px;
-    box-shadow: 0 10px 40px #CCD7DD, 0 0 0 20px #64BBE0;
+    box-shadow: 0 10px 40px #CCD7DD, 0 0 0 20px #55c6c9;
     transform: scale(0.5);
 }
 
@@ -90,7 +99,7 @@ input[type="text"]
 input[type="text"]::placeholder
 {
     font-family: 'Roboto Condensed', sans-serif;
-    color: #64BBE0;
+    color: #55c6c9;
 }
 
 #s-cover
@@ -113,13 +122,13 @@ button
     position: relative;
     top: -8px;
     left: 0;
-    width: 45px;
-    height: 55px;
+    width: 75px;
+    height: 90px;
     margin-top: 0;
     border-width: 15px;
     border: 15px solid #F4F4F4;
     background-color: transparent;
-    border-radius: 40%;
+    border-radius: 30%;
     transition: 0.5s ease all;
 }
 
@@ -143,7 +152,7 @@ button span:before, button span:after
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 55px;
+    width: 75px;
     height: 15px;
     background-color: #F4F4F4;
     border-radius: 10px;
@@ -188,108 +197,3 @@ button span:before, button span:after
     background-color: #F4F4F4;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.button2
-{
-    position: relative;
-    display: block;
-    width: 84px;
-    height: 96px;
-    margin-left: 15px;
-}
-
-#x-circle
-{
-    position: relative;
-    top: -8px;
-    left: 0;
-    width: 45px;
-    height: 55px;
-    margin-top: 0;
-    border-width: 15px;
-    border: 15px solid #006EA9;
-    background-color: transparent;
-    border-radius: 40%;
-    transition: 0.5s ease all;
-}
-
-.button2 span
-{
-    position: absolute;
-    top: 68px;
-    left: 43px;
-    display: block;
-    width: 45px;
-    height: 15px;
-    background-color: transparent;
-    border-radius: 10px;
-    transform: rotateZ(52deg);
-    transition: 0.5s ease all;
-}
-
-.button2 span:before, .button2 span:after
-{
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 65px;
-    height: 15px;
-    background-color: #006EA9;
-    border-radius: 10px;
-    transform: rotateZ(0);
-    transition: 0.5s ease all;
-}
-
-#x-cover:hover #x-circle
-{
-    top: -1px;
-    width: 67px;
-    height: 15px;
-    border-width: 0;
-    background-color: #006EA9;
-    border-radius: 20px;
-}
-
-#x-cover:hover span
-{
-    top: 50%;
-    left: 56px;
-    width: 25px;
-    margin-top: -9px;
-    transform: rotateZ(0);
-}
-
-#x-cover:hover button span:before
-{
-    bottom: 11px;
-    transform: rotateZ(52deg);
-}
-
-#x-cover:hover button span:after
-{
-    bottom: -11px;
-    transform: rotateZ(-52deg);
-}
-#x-cover:hover button span:before, #x-cover:hover button span:after
-{
-    right: -6px;
-    width: 40px;
-    background-color: #006EA9;
-}
