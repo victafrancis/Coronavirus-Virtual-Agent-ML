@@ -2,6 +2,7 @@ from flask import Flask, render_template, url_for, request
 import pickle
 import responses, functions
 import numpy as np
+import keras
 
 # import keras.backend.tensorflow_backend as tb
 # tb._SYMBOLIC_SCOPE.value = True
