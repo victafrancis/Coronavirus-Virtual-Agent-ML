@@ -18,7 +18,10 @@ def home():
 
     content = {'question':'','confidence':'','response_title':'','response_content':''}
     content['infected_count'] = functions.getInfectedCount()
-    
+    content['recovered_count'] = functions.getCuredCount()
+    content['death_count'] = functions.getDeathCount()
+
+
     if request.method == 'POST':
         question = request.form['question']  #get question from form
 
