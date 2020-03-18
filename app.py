@@ -2,7 +2,6 @@ from flask import Flask, render_template, url_for, request
 import pickle
 import responses, functions
 import numpy as np
-import keras
 
 # import keras.backend.tensorflow_backend as tb
 # tb._SYMBOLIC_SCOPE.value = True
@@ -21,6 +20,8 @@ def home():
     content['infected_count'] = functions.getInfectedCount()
     content['recovered_count'] = functions.getCuredCount()
     content['death_count'] = functions.getDeathCount()
+    content['mortality_rate'] = functions.getMortalityRate()
+    content['recovery_rate'] = functions.getRecoveryRate()
 
 
     if request.method == 'POST':

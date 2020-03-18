@@ -58,3 +58,17 @@ def getDeathCount():
     count = soup.find_all("div", {"class": "maincounter-number"})[1].find("span", text=True)
 
     return count.string
+
+def getMortalityRate():
+    deaths = int(removeSpecialCharacters(getDeathCount()))
+    infected = int(removeSpecialCharacters(getInfectedCount()))
+
+    rate = round((deaths/infected)*100,2)
+    return str(rate) + '%'
+
+def getRecoveryRate():
+    recovery = int(removeSpecialCharacters(getCuredCount()))
+    infected = int(removeSpecialCharacters(getInfectedCount()))
+
+    rate = round((recovery/infected)*100,2)
+    return str(rate) + '%'
