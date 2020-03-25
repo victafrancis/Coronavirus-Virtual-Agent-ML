@@ -1,6 +1,7 @@
 from spellchecker import SpellChecker
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
+import time
 
 # spell checker
 spellcheck = SpellChecker()
@@ -29,46 +30,23 @@ def removeSpecialCharacters(sentence):
     return sentence
 
 
-def getInfectedCount():
+def getData():
     url = 'https://www.worldometers.info/coronavirus/'
     
     html_page = urlopen(url).read()
     soup = BeautifulSoup(html_page, 'html.parser')
 
-    count = soup.find("div", {"class": "maincounter-number"}).find("span", text=True)
+    data = {}
 
-    return count.string
+    data['infected'] = soup.find("div", {"class": "maincounter-number"}).find("span", text=True).text
+    data['recovered'] = soup.find_all("div", {"class": "maincounter-number"})[2].find("span", text=True).text
+    data['deaths'] = soup.find_all("div", {"class": "maincounter-number"})[1].find("span", text=True).text
 
-def getCuredCount():
-    url = 'https://www.worldometers.info/coronavirus/'
-    
-    html_page = urlopen(url).read()
-    soup = BeautifulSoup(html_page, 'html.parser')
+    deaths = int(removeSpecialCharacters(data['deaths']))
+    recovery = int(removeSpecialCharacters(data['recovered']))
+    infected = int(removeSpecialCharacters(data['infected']))
 
-    count = soup.find_all("div", {"class": "maincounter-number"})[2].find("span", text=True)
+    data['death_rate'] = str(round((deaths/infected)*100,2)) + '%'
+    data['recovery_rate'] = str(round((recovery/infected)*100,2)) + '%'
 
-    return count.string
-
-def getDeathCount():
-    url = 'https://www.worldometers.info/coronavirus/'
-    
-    html_page = urlopen(url).read()
-    soup = BeautifulSoup(html_page, 'html.parser')
-
-    count = soup.find_all("div", {"class": "maincounter-number"})[1].find("span", text=True)
-
-    return count.string
-
-def getMortalityRate():
-    deaths = int(removeSpecialCharacters(getDeathCount()))
-    infected = int(removeSpecialCharacters(getInfectedCount()))
-
-    rate = round((deaths/infected)*100,2)
-    return str(rate) + '%'
-
-def getRecoveryRate():
-    recovery = int(removeSpecialCharacters(getCuredCount()))
-    infected = int(removeSpecialCharacters(getInfectedCount()))
-
-    rate = round((recovery/infected)*100,2)
-    return str(rate) + '%'
+    return data

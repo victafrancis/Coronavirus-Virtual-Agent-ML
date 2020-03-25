@@ -17,11 +17,12 @@ vectorizer = pickle.load(open('cv_vector.pickle','rb'))
 def home():
 
     content = {'question':'','confidence':'','response_title':'','response_content':''}
-    content['infected_count'] = functions.getInfectedCount()
-    content['recovered_count'] = functions.getCuredCount()
-    content['death_count'] = functions.getDeathCount()
-    content['mortality_rate'] = functions.getMortalityRate()
-    content['recovery_rate'] = functions.getRecoveryRate()
+    data = functions.getData()
+    content['infected_count'] = data['infected']
+    content['recovered_count'] = data['recovered']
+    content['death_count'] = data['deaths']
+    content['death_rate'] = data['death_rate']
+    content['recovery_rate'] = data['recovery_rate']
 
 
     if request.method == 'POST':
